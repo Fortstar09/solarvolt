@@ -61,10 +61,10 @@ const StackedSections = () => {
         <section
           key={i}
           ref={(el) => {
-            if (el) sectionsRef.current[i] = el;
+            if (el) sectionsRef.current[i] = el as HTMLDivElement;
           }}
           className={`
-            relative h-screen w-full flex items-center justify-center
+           h-screen w-full flex items-center justify-center
             sticky top-0
             ${sec.bg}
           `}

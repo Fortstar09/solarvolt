@@ -2,8 +2,7 @@ import { useState, useEffect } from "react";
 import gsap from "gsap";
 
 const Hero = () => {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [currentSlide, setCurrentSlide] = useState(0);
+  const [currentSlide] = useState(0);
 
   const categories = [
     "Landscape",
