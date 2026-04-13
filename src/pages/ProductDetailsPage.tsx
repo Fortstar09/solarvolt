@@ -41,18 +41,18 @@ const ProductDetailsPage = () => {
   }
 
   const handleWhatsAppOrder = () => {
-    const phoneNumber = "2348000000000"; // Replace with your WhatsApp number
+    const phoneNumber = "2347019155892"; // Replace with your WhatsApp number
     const message = encodeURIComponent(
-      `${product.whatsappMessage}\n\nProduct: ${product.name}\nPrice: ${formatPrice(product.price)}`
+      `${product.whatsappMessage}\n\nProduct: ${product.name}\nPrice: ${formatPrice(product.price)}`,
     );
     window.open(
       `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${message}`,
-      "_blank"
+      "_blank",
     );
   };
 
   const relatedProducts = PRODUCTS.filter(
-    (p) => p.category === product.category && p.id !== product.id
+    (p) => p.category === product.category && p.id !== product.id,
   ).slice(0, 3);
 
   return (
@@ -75,7 +75,9 @@ const ProductDetailsPage = () => {
             <div
               className="w-full h-full bg-cover bg-center"
               style={{
-                backgroundImage: product.image ? `url('${product.image}')` : "none",
+                backgroundImage: product.image
+                  ? `url('${product.image}')`
+                  : "none",
               }}
             />
           </div>
@@ -116,7 +118,10 @@ const ProductDetailsPage = () => {
                   <ul className="space-y-3">
                     {product.features.map((feature, idx) => (
                       <li key={idx} className="flex items-center gap-3">
-                        <Check size={18} className="text-teal-600 flex-shrink-0" />
+                        <Check
+                          size={18}
+                          className="text-teal-600 flex-shrink-0"
+                        />
                         <span className="text-black/70">{feature}</span>
                       </li>
                     ))}
@@ -142,29 +147,34 @@ const ProductDetailsPage = () => {
         </div>
 
         {/* Specifications */}
-        {product.specifications && Object.keys(product.specifications).length > 0 && (
-          <div className="mb-20">
-            <h2 className="text-3xl font-bold text-black mb-8">Specifications</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {Object.entries(product.specifications).map(([key, value]) => (
-                <div
-                  key={key}
-                  className="p-6 bg-white border border-black/8 rounded-2xl"
-                >
-                  <p className="text-sm font-semibold text-black/60 uppercase tracking-widest mb-2">
-                    {key.replace(/([A-Z])/g, " $1").trim()}
-                  </p>
-                  <p className="text-lg font-semibold text-black">{value}</p>
-                </div>
-              ))}
+        {product.specifications &&
+          Object.keys(product.specifications).length > 0 && (
+            <div className="mb-20">
+              <h2 className="text-3xl font-bold text-black mb-8">
+                Specifications
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {Object.entries(product.specifications).map(([key, value]) => (
+                  <div
+                    key={key}
+                    className="p-6 bg-white border border-black/8 rounded-2xl"
+                  >
+                    <p className="text-sm font-semibold text-black/60 uppercase tracking-widest mb-2">
+                      {key.replace(/([A-Z])/g, " $1").trim()}
+                    </p>
+                    <p className="text-lg font-semibold text-black">{value}</p>
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
-        )}
+          )}
 
         {/* Components */}
         {product.components && product.components.length > 0 && (
           <div className="mb-20">
-            <h2 className="text-3xl font-bold text-black mb-8">What's Included</h2>
+            <h2 className="text-3xl font-bold text-black mb-8">
+              What's Included
+            </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {product.components.map((component, idx) => (
                 <div

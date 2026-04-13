@@ -4,10 +4,10 @@ import viteLogo from "../assets/vite.svg";
 import { MoveUpRight } from "lucide-react";
 
 const navLinks = [
-  { label: "Home", href: "#" },
+  { label: "Home", href: "/" },
   { label: "Service", href: "#service" },
-  { label: "Projects", href: "#projects" },
-  { label: "Contact us", href: "#contact" },
+  { label: "Projects", href: "/projects" },
+  { label: "Contact us", href: "/contact" },
 ];
 
 export default function Navbar() {

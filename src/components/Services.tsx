@@ -101,7 +101,11 @@ const Services = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative w-full bg-white py-20 px-6 md:px-12">
+    <section
+      ref={sectionRef}
+      id="service"
+      className="relative w-full bg-white py-20 px-6 md:px-12"
+    >
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="services-heading mb-16">
@@ -112,8 +116,9 @@ const Services = () => {
               <span className="text-teal-600 font-normal">SolarVolt</span>?
             </h2>
             <p className="text-black/60 text-lg">
-              We don't just sell solar systems—we provide complete solutions with
-              professional service, warranty protection, and lifetime support.
+              We don't just sell solar systems—we provide complete solutions
+              with professional service, warranty protection, and lifetime
+              support.
             </p>
           </div>
         </div>
