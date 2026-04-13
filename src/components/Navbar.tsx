@@ -38,7 +38,7 @@ export default function Navbar() {
         <div className="flex items-center gap-2 pl-2">
           <img src={viteLogo} className="w-10 h-10" />
           <span className="font-semibold text-white text-xl header tracking-wide">
-            Volt
+            SolarVolt
           </span>
         </div>
 

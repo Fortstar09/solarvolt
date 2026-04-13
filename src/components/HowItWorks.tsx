@@ -44,7 +44,7 @@ const HowItWorks = () => {
             start: "top 80%",
             end: "top 40%",
             scrub: 0.4,
-            markers: true,
+            // markers: true,
           },
         },
       );

@@ -90,7 +90,7 @@ const Hero = () => {
       <div className="max-w-7xl w-full h-full relative z-10 flex flex-col justify-between pt-30">
         {/* Main Heading */}
         <div className="hero-heading max-w-3xl">
-          <h1 className="text-5xl md:text-8xl font-normal text-white font-bricolage">
+          <h1 className="text-5xl md:text-7xl font-normal text-white font-bricolage">
             Capturing beautiful moment lens shutter
           </h1>
         </div>
