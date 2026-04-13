@@ -205,9 +205,12 @@ const FeaturedPackageComponent = () => {
 
         {/* View All Button */}
         <div className="flex justify-center">
-          <button className="px-8 uppercase cursor-pointer py-3 border border-black/10 text-black rounded-full font-medium group-hover:cursor-pointer hover:bg-teal-600 hover:text-white hover:border-none transition flex items-center gap-3 backdrop-blur-sm">
+          <a
+            href="/products"
+            className="px-8 uppercase cursor-pointer py-3 border border-black/10 text-black rounded-full font-medium group-hover:cursor-pointer hover:bg-teal-600 hover:text-white hover:border-none transition flex items-center gap-3 backdrop-blur-sm"
+          >
             View All Packages
-          </button>
+          </a>
         </div>
       </div>
     </section>

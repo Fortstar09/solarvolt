@@ -1,37 +1,31 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useState } from "react";
-import About from "./components/About";
-import Compare from "./components/Compare";
-import CTA from "./components/CTA";
-import FeaturedPackage from "./components/FeaturedPackage";
-import Footer from "./components/Footer";
-import Hero from "./components/Hero";
-import HowItWorks from "./components/HowItWorks";
 import Navbar from "./components/Navbar";
-import Packages from "./components/Packages";
-import Stats from "./components/Stats";
-import Testimonials from "./components/Testimonials";
 import ChatWindow from "./components/ChatWindow";
 import ChatButton from "./components/ChatButton";
+import Footer from "./components/Footer";
+import Home from "./pages/Home";
+import ProductsPage from "./pages/ProductsPage";
+import ProductDetailsPage from "./pages/ProductDetailsPage";
 
 export default function App() {
   const [open, setOpen] = useState(false);
+
   return (
-    <>
-      <div className="">
+    <Router>
+      <div className="min-h-screen bg-white flex flex-col">
         <Navbar />
-        <Hero />
-        <Stats />
-        <About />
-        <FeaturedPackage />
-        <Compare />
-        <Packages />
-        <HowItWorks />
-        <Testimonials />
-        <CTA />
+        <main className="flex-1">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/products" element={<ProductsPage />} />
+            <Route path="/products/:id" element={<ProductDetailsPage />} />
+          </Routes>
+        </main>
         <Footer />
+        <ChatButton onClick={() => setOpen(true)} />
+        <ChatWindow open={open} onClose={() => setOpen(false)} />
       </div>
-      <ChatButton onClick={() => setOpen(true)} />
-      <ChatWindow open={open} onClose={() => setOpen(false)} />
-    </>
+    </Router>
   );
 }
