@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { X } from "lucide-react";
-import packages from "../data/solarPackages.json";
+import ReactMarkdown from "react-markdown";
+import rehypeSanitize from "rehype-sanitize";
 
 const ChatWindow = ({
   open,
@@ -12,6 +13,7 @@ const ChatWindow = ({
 }) => {
   const panelRef = useRef<HTMLDivElement>(null);
   const messagesRef = useRef<HTMLDivElement[]>([]);
+
   const [messages, setMessages] = useState([
     {
       role: "bot",
@@ -52,44 +54,31 @@ const ChatWindow = ({
 
     const userMessage = input;
 
-    setMessages((prev) => [...prev, { role: "user", text: userMessage }]);
+    // Add user message + loading message in ONE update
+    setMessages((prev) => [
+      ...prev,
+      { role: "user", text: userMessage },
+      { role: "bot", text: "Thinking..." },
+    ]);
 
     setInput("");
 
-    // temporary loading message
-    setMessages((prev) => [...prev, { role: "bot", text: "Thinking..." }]);
-
     try {
-      const response = await fetch(
-        "https://openrouter.ai/api/v1/chat/completions",
-        {
-          method: "POST",
-          headers: {
-            Authorization: `Bearer ${import.meta.env.VITE_OPENROUTER_API_KEY}`,
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            model: "mistralai/mistral-7b-instruct:free",
-            messages: [
-              {
-                role: "system",
-                content: `You are a solar expert. Recommend the best package from this data:
-            
-            ${JSON.stringify(packages)}`,
-              },
-              {
-                role: "user",
-                content: userMessage,
-              },
-            ],
-          }),
+      const response = await fetch("https://volt-ai-roan.vercel.app/ai", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
         },
-      );
+        body: JSON.stringify({
+          message: userMessage, // ✅ match your backend
+        }),
+      });
 
       const data = await response.json();
 
-      const reply = data.choices?.[0]?.message?.content || "No response";
+      const reply = data.reply || "No response";
 
+      // Replace "Thinking..." with real reply
       setMessages((prev) => [
         ...prev.slice(0, -1),
         { role: "bot", text: reply },
@@ -141,7 +130,13 @@ const ChatWindow = ({
                   : "bg-white border text-gray-700 rounded-bl-sm"
               }`}
             >
-              {msg.text}
+              {msg.role === "bot" ? (
+                <ReactMarkdown rehypePlugins={[rehypeSanitize]}>
+                  {msg.text}
+                </ReactMarkdown>
+              ) : (
+                msg.text
+              )}
             </div>
           </div>
         ))}
