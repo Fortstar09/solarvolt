@@ -2,6 +2,7 @@ import { MoveUpRight } from "lucide-react";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { Link } from "react-router-dom";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -33,6 +34,13 @@ const CTA = () => {
     };
   }, []);
 
+  const WhatsappMessage = () => {
+    window.open(
+      `https://api.whatsapp.com/send?phone=2347019155892&text=I+will+like+a+free+Consultation+with+your+brand`,
+      "_blank",
+    );
+  };
+
   return (
     <section
       ref={sectionRef}
@@ -50,8 +58,8 @@ const CTA = () => {
               Ready to switch?
             </span>
             <h2 className="text-4xl md:text-6xl font-light text-white font-bricolage leading-tight">
-              Start saving on{" "}
-              <span className="text-teal-400">electricity</span> today
+              Start saving on <span className="text-teal-400">electricity</span>{" "}
+              today
             </h2>
           </div>
 
@@ -65,33 +73,41 @@ const CTA = () => {
 
             <div className="flex flex-col sm:flex-row gap-4">
               {/* Primary CTA */}
-              <div className="flex items-center group hover:cursor-pointer">
-                <button className="px-8 py-3 bg-teal-600 text-white rounded-full font-medium group-hover:bg-teal-500 transition">
+              <div
+                onClick={WhatsappMessage}
+                className=" cursor-pointer flex items-center group hover:cursor-pointer"
+              >
+                <button className="px-8 py-3 bg-teal-600 text-white rounded-full font-medium group-hover:cursor-pointer  group-hover:bg-teal-500 transition">
                   Book Free Consultation
                 </button>
-                <span className="bg-teal-600 p-3 rounded-full -ml-1.5 transition-transform duration-300 group-hover:rotate-90 group-hover:bg-teal-500">
+                <span className="bg-teal-600 p-3 rounded-full -ml-1.5 group-hover:cursor-pointer  transition-transform duration-300 group-hover:rotate-90 group-hover:bg-teal-500">
                   <MoveUpRight color="white" size={18} />
                 </span>
               </div>
 
               {/* Secondary CTA */}
-              <button className="px-8 py-3 border border-white/20 text-white/70 rounded-full font-medium hover:border-white/40 hover:text-white transition">
+              <Link
+                to="/products"
+                className="px-8 py-3 border border-white/20 text-white/70 rounded-full font-medium hover:border-white/40 hover:text-white transition"
+              >
                 View All Packages
-              </button>
+              </Link>
             </div>
 
             {/* Trust signals */}
             <div className="flex flex-wrap gap-6 pt-2">
-              {["Free site assessment", "No hidden fees", "5-year warranty"].map(
-                (item, i) => (
-                  <div key={i} className="flex items-center gap-2">
-                    <div className="w-4 h-4 rounded-full bg-teal-400/20 flex items-center justify-center">
-                      <div className="w-1.5 h-1.5 rounded-full bg-teal-400" />
-                    </div>
-                    <span className="text-sm text-white/40">{item}</span>
+              {[
+                "Free site assessment",
+                "No hidden fees",
+                "5-year warranty",
+              ].map((item, i) => (
+                <div key={i} className="flex items-center gap-2">
+                  <div className="w-4 h-4 rounded-full bg-teal-400/20 flex items-center justify-center">
+                    <div className="w-1.5 h-1.5 rounded-full bg-teal-400" />
                   </div>
-                ),
-              )}
+                  <span className="text-sm text-white/40">{item}</span>
+                </div>
+              ))}
             </div>
           </div>
         </div>

@@ -21,15 +21,15 @@ const Hero = () => {
     // },
     {
       id: 2,
-      title: "Lonely Life at the Lagos Nigeria",
+      title: "Reliable solar power for everyday living",
       subtitle: "clean energy",
-      image: "/hero/hero-img.jpg",
+      image: "/hero/hero-1.jpg",
     },
     {
       id: 3,
-      title: "Silent Inverter that help to keep business",
+      title: "Switch to reliable solar power today",
       subtitle: "No Sound pollution",
-      image: "/hero/hero-img.jpg",
+      image: "/hero/hero-3.jpg",
     },
   ];
 
@@ -77,7 +77,7 @@ const Hero = () => {
       <div
         className="absolute inset-0 z-0"
         style={{
-          backgroundImage: `url('/hero/hero-img.jpg')`,
+          backgroundImage: `url('/hero/hero-2.jpg')`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
@@ -86,18 +86,18 @@ const Hero = () => {
       </div>
 
       {/* Content */}
-      <div className="max-w-7xl w-full h-full relative z-10 flex flex-col justify-between pt-30">
+      <div className="max-w-7xl w-full h-full relative z-10 flex flex-col justify-between pt-30 px-6 md:px-12">
         {/* Main Heading */}
         <div className="hero-heading max-w-3xl">
-          <h1 className="text-5xl md:text-7xl font-normal text-white font-bricolage">
-            Capturing beautiful moment lens shutter
+          <h1 className=" text-5xl sm:text-6xl md:text-7xl font-normal text-white font-bricolage">
+            Sustainable energy solutions for your home
           </h1>
         </div>
 
         {/* Bottom Section */}
         <div className="flex gap-8 justify-between items-end pb-10 scroll-">
           {/* Categories */}
-          <div className="hero-tags flex items-start justify-start flex-wrap gap-3 max-w-md">
+          <div className="hero-tags hidden md:flex items-start justify-start flex-wrap gap-3 max-w-md">
             {categories.map((category) => (
               <button
                 key={category}
@@ -185,7 +185,7 @@ const Hero = () => {
                     <img
                       src={project.image}
                       alt="image"
-                      className="size-30 rounded-lg"
+                      className="h-25 w-35 rounded-lg object-cover"
                     />
 
                     <div className=" flex flex-col justify-between py-1 max-w-[220px]">

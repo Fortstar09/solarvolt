@@ -2,6 +2,7 @@ import { AlarmClock, MoveUpRight } from "lucide-react";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { SolarPackage } from "../utils/solar-package";
+import { Link } from "react-router-dom";
 
 interface SolarPackageType {
   id: string;
@@ -64,8 +65,8 @@ const FeaturedPackageComponent = () => {
 
         {/* Featured Package */}
         {featuredPackage && (
-          <div className="mb-10 bg-white rounded-3xl group border border-[#333]/10">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="mb-4 md:mb-10 bg-white rounded-3xl group border border-[#333]/10">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-1 md:gap-4 lg:gap-8">
               {/* Featured Image */}
               <div className="relative rounded-3xl overflow-hidden h-80 md:h-full bg-gradient-to-br from-teal-400 to-gray-600">
                 <div
@@ -120,20 +121,23 @@ const FeaturedPackageComponent = () => {
                   {/* Price */}
                   <div className="">
                     <p className="text-xs text-gray-500">Starting from</p>
-                    <p className="text-4xl font-bold text-teal-600">
+                    <p className="text-3xl md:text-4xl font-bold text-teal-600">
                       {formatPrice(featuredPackage.price)}
                     </p>
                   </div>
 
                   {/* CTA Buttons */}
-                  <div className="flex items-center group w-fit">
-                    <button className="px-8 py-3 border border-black/10 text-black rounded-full font-medium group-hover:cursor-pointer group-hover:bg-black/10 transition flex items-center gap-3 backdrop-blur-sm">
+                  <Link
+                    to={`/products/${featuredPackage.id}`}
+                    className="flex items-center group w-fit"
+                  >
+                    <button className="hidden lg:flex px-8 py-3 border border-black/10 text-black rounded-full font-medium group-hover:cursor-pointer group-hover:bg-black/10 transition flex items-center gap-3 backdrop-blur-sm">
                       GET QUOTE
                     </button>
                     <button className="w-12 h-12 flex -ml-2 items-center justify-center rounded-full bg-[#333] text-white transition group-hover:cursor-pointer group-hover:rotate-90 group-hover:bg-teal-600">
                       <MoveUpRight size={20} />
                     </button>
-                  </div>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -142,11 +146,11 @@ const FeaturedPackageComponent = () => {
 
         {/* Other Packages Grid */}
         <div className="mb-20">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 md:gap-3 lg:gap-8">
             {otherPackages.map((pkg) => (
               <div
                 key={pkg.id}
-                className="group bg-white rounded-2xl overflow-hidden hover:shadow-xl transition duration-300"
+                className="group mb-3 md:mb-0 bg-white rounded-2xl overflow-hidden hover:shadow-xl transition duration-300"
               >
                 {/* Image */}
                 <div className="relative h-48 overflow-hidden rounded-2xl">
@@ -184,9 +188,12 @@ const FeaturedPackageComponent = () => {
                     <p className="text-2xl font-bold text-teal-600">
                       {formatPrice(pkg.price)}
                     </p>
-                    <button className="w-10 h-10 flex -ml-2 items-center justify-center rounded-full bg-[#333] text-white transition group-hover:cursor-pointer group-hover:rotate-90 group-hover:bg-teal-600">
+                    <Link
+                      to={`/products/${pkg.name}`}
+                      className="w-10 h-10 flex -ml-2 items-center justify-center rounded-full bg-[#333] text-white transition group-hover:cursor-pointer group-hover:rotate-90 group-hover:bg-teal-600"
+                    >
                       <MoveUpRight size={16} />
-                    </button>
+                    </Link>
                   </div>
 
                   {/* Quick Features */}
@@ -207,7 +214,7 @@ const FeaturedPackageComponent = () => {
         <div className="flex justify-center">
           <a
             href="/products"
-            className="px-8 uppercase cursor-pointer py-3 border border-black/10 text-black rounded-full font-medium group-hover:cursor-pointer hover:bg-teal-600 hover:text-white hover:border-none transition flex items-center gap-3 backdrop-blur-sm"
+            className="px-8 cursor-pointer py-3 border border-black/10 text-black rounded-full font-medium group-hover:cursor-pointer hover:bg-teal-600 hover:text-white hover:border-none transition flex items-center gap-3 backdrop-blur-sm"
           >
             View All Packages
           </a>

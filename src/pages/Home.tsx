@@ -7,15 +7,15 @@ import CTA from "../components/CTA";
 import Services from "../components/Services";
 import HowItWorks from "../components/HowItWorks";
 
-const Home = () => {
+const Home = ({ handleChat }: { handleChat: () => void }) => {
   return (
     <div className="w-full">
       <Hero />
       <Stats />
       <About />
       <FeaturedPackage />
-      <Services />
-      <HowItWorks />
+      <Services openChat={handleChat} />
+      <HowItWorks openChat={handleChat} />
       <Testimonials />
       <CTA />
     </div>

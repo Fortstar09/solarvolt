@@ -41,7 +41,7 @@ const About = () => {
 
   return (
     <section ref={sectionRef} className="relative w-full bg-white">
-      <div className="max-w-7xl mx-auto py-20">
+      <div className="max-w-7xl mx-auto py-20 px-6 md:px-12">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center min-h-100">
           {/* LEFT SIDE */}
           <div
@@ -58,9 +58,11 @@ const About = () => {
 
             {/* Description */}
             <p className="text-black/70 text-lg leading-relaxed max-w-md">
-              We Ardently Strive To Encapsulate Life's Most Precious Moments,
-              Weaving A Tapestry Of Artistry And A Hint Of Enchanting Magic.
-              With The Timeless Essence Of The Human Experience.
+              With over 500+ successful installations, SolarVolt has helped
+              customers save more than ₦2B in energy costs while maintaining a
+              98% customer satisfaction rate. Backed by a 5-year warranty
+              guarantee, our systems are built for long-term performance, peace
+              of mind, and a cleaner energy future.
             </p>
           </div>
 
@@ -71,12 +73,12 @@ const About = () => {
           >
             {/* Main Heading */}
             <h3 className="text-4xl md:text-6xl font-light text-black/90 mb-12 leading-tight font-bricolage">
-              <span className="text-black">Photography</span> is driven by a
-              deep passion for{" "}
+              <span className="text-teal-600 font-normal">SolarVolt</span> is
+              makes solar energy{" "}
               <span className="text-teal-600 font-normal">
-                capturing life's precious moments
+                simple, reliable, and accessible
               </span>{" "}
-              with artistry and a touch of magic
+              for everyday life
             </h3>
 
             {/* Learn More Button */}

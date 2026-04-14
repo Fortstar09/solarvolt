@@ -51,7 +51,7 @@ const services = [
   },
 ];
 
-const Services = () => {
+const Services = ({ openChat }: { openChat: () => void }) => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const cardsRef = useRef<HTMLDivElement[]>([]);
 
@@ -161,10 +161,14 @@ const Services = () => {
         {/* Bottom CTA */}
         <div className="mt-16 text-center">
           <p className="text-black/60 mb-6">
-            Ready to switch to clean, reliable solar energy?
+            Ready to switch to clean, reliable solar energy and don't know how
+            to go about it?
           </p>
-          <button className="px-8 py-3 bg-teal-600 text-white rounded-full font-medium hover:bg-teal-700 transition duration-300 shadow-lg hover:shadow-xl">
-            Get Your Free Consultation
+          <button
+            onClick={openChat}
+            className="cursor-pointer px-8 py-3 bg-teal-600 text-white rounded-full font-medium hover:bg-teal-700 transition duration-300 shadow-lg hover:shadow-xl"
+          >
+            Ask VoltBot
           </button>
         </div>
       </div>

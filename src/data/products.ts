@@ -6,7 +6,7 @@ export const PRODUCTS = [
     category: "solar-package",
     type: "low",
     price: 300000,
-    image: "/hero/hero-img.jpg",
+    image: "/product/shop.jpg",
     description: "Basic solar solution for students and minimal users",
     fullDescription:
       "Perfect for students and light users. Get reliable power for your essential devices with the Starter Pack. Ideal for powering lights, phones, and laptops.",
@@ -34,7 +34,7 @@ export const PRODUCTS = [
     category: "solar-package",
     type: "low",
     price: 500000,
-    image: "/hero/hero-img.jpg",
+    image: "/product/shop.jpg",
     description: "Improved capacity for students with more devices",
     fullDescription:
       "Upgraded student pack with better capacity. Power multiple devices simultaneously including TV, laptop, and more.",
@@ -50,7 +50,7 @@ export const PRODUCTS = [
       backupTime: "5-7 hours",
       warranty: "5 years",
     },
-    features: ["5 LED Bulbs", "Laptop", "Phones", "WiFi Router", "24\" TV"],
+    features: ["5 LED Bulbs", "Laptop", "Phones", "WiFi Router", '24" TV'],
     whatsappMessage:
       "Hi! I'm interested in the *Standard Student Pack* (₦500,000). Can you provide more details and a quote?",
   },
@@ -60,7 +60,7 @@ export const PRODUCTS = [
     category: "solar-package",
     type: "low",
     price: 700000,
-    image: "/hero/hero-img.jpg",
+    image: "/product/shop.jpg",
     description: "Perfect for single-room apartments",
     fullDescription:
       "Designed specifically for self-contained apartments. Enjoy entertainment and comfort without worrying about power cuts.",
@@ -78,7 +78,7 @@ export const PRODUCTS = [
     },
     features: [
       "6 LED Bulbs",
-      "32\" TV",
+      '32" TV',
       "Decoder",
       "Laptop",
       "Phones",
@@ -109,7 +109,7 @@ export const PRODUCTS = [
       backupTime: "6-8 hours",
       warranty: "5 years",
     },
-    features: ["8 LED Bulbs", "43\" TV", "Decoder", "Fan", "Laptop", "Phones"],
+    features: ["8 LED Bulbs", '43" TV', "Decoder", "Fan", "Laptop", "Phones"],
     whatsappMessage:
       "Hi! I'm interested in the *Home Basic Pack* (₦1,200,000). Can you provide more details and a quote?",
   },
@@ -119,7 +119,7 @@ export const PRODUCTS = [
     category: "solar-package",
     type: "mid",
     price: 2200000,
-    image: "/hero/hero-img.jpg",
+    image: "/product/premium-home.jpg",
     description: "Balanced power for comfort living",
     fullDescription:
       "Balanced capacity for comfortable home living. Includes refrigeration and entertainment systems.",
@@ -153,7 +153,7 @@ export const PRODUCTS = [
     category: "solar-package",
     type: "premium",
     price: 4200000,
-    image: "/hero/hero-img.jpg",
+    image: "/product/utimate.jpg",
     description: "Advanced home solar solution",
     fullDescription:
       "Premium home solution with advanced technology. Power your entire home with confidence.",
@@ -187,7 +187,7 @@ export const PRODUCTS = [
     category: "solar-package",
     type: "premium",
     price: 7500000,
-    image: "/hero/hero-img.jpg",
+    image: "/product/home-setup.jpg",
     description: "High-end full home power solution",
     fullDescription:
       "Top-tier home solar solution. Experience almost 24/7 power with maximum capacity.",
@@ -219,7 +219,7 @@ export const PRODUCTS = [
     category: "solar-package",
     type: "commercial",
     price: 1500000,
-    image: "/hero/hero-img.jpg",
+    image: "/product/shop.jpg",
     description: "Ideal for small shops and kiosks",
     fullDescription:
       "Perfect for small retail businesses. Keep your shop running 24/7 with reliable power.",
@@ -245,7 +245,7 @@ export const PRODUCTS = [
     category: "solar-package",
     type: "commercial",
     price: 2800000,
-    image: "/hero/hero-img.jpg",
+    image: "/product/shop.jpg",
     description: "Designed for salons and barbing shops",
     fullDescription:
       "Specialized for salons and barbing shops. Power clippers, dryers, and lighting continuously.",
@@ -278,7 +278,8 @@ export const PRODUCTS = [
     category: "solar-package",
     type: "commercial",
     price: 5500000,
-    image: "/hero/hero-img.jpg",
+    image:
+      "/product/bussiness.com_how-to-use-solar-panel-kits-with-battery-and-inverter-simple-___",
     description: "For heavy commercial usage",
     fullDescription:
       "Heavy-duty commercial solution. Ideal for offices, restaurants, and large retail spaces.",
@@ -311,7 +312,7 @@ export const PRODUCTS = [
     name: "Single Solar Panel 450W",
     category: "upgrade",
     price: 250000,
-    image: "/hero/hero-img.jpg",
+    image: "/product/panel.jpg",
     description: "Upgrade your setup with high-efficiency solar panels",
     fullDescription:
       "Looking to expand your solar system? Our 450W Mono Solar Panels are perfect for upgrading existing setups or building your custom solution.",
@@ -337,7 +338,7 @@ export const PRODUCTS = [
     name: "Portable Power Station 3.6kWh",
     category: "portable",
     price: 900000,
-    image: "/hero/hero-img.jpg",
+    image: "/product/power.jpg",
     description: "Mobile power for anywhere you go",
     fullDescription:
       "High-capacity portable power station perfect for camping, events, or as backup power. Lightweight yet powerful.",
@@ -364,7 +365,7 @@ export const PRODUCTS = [
     name: "Solar Street Light 200W",
     category: "commercial",
     price: 180000,
-    image: "/hero/hero-img.jpg",
+    image: "/product/street.jpg",
     description: "Illuminate streets and compounds with solar power",
     fullDescription:
       "Energy-efficient solar street lights. Perfect for streets, compounds, and outdoor areas. Automatic day/night operation.",
@@ -391,7 +392,7 @@ export const PRODUCTS = [
     name: "Complete Solar CCTV System",
     category: "security",
     price: 450000,
-    image: "/hero/hero-img.jpg",
+    image: "/product/cctv.jpg",
     description: "Solar-powered security system for your property",
     fullDescription:
       "Complete 4-camera solar-powered CCTV system. Monitor your property 24/7 without power concerns.",

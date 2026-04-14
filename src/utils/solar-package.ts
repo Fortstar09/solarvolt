@@ -193,21 +193,38 @@ export const SolarPackage = [
 
 export const FeaturedPackage = [
   {
-    id: "1023",
-    category: "low",
-    name: "Self-Con Comfort Pack",
-    tag: "Most Popular",
-    highlight:
-      "Perfect balance of price and performance for single-room apartments",
-    price: 700000,
-    image: "",
-    otherImages: [],
-    features: [
-      "1KVA inverter system",
-      "Supports TV, fan & lighting",
-      "Reliable for daily use",
-      "Great for self-contained apartments",
+    id: "pkg-smart-home",
+    name: "Smart Home Pack",
+    category: "solar-package",
+    type: "premium",
+    price: 4200000,
+    image: "/hero/hero-img.jpg",
+    description: "Advanced home solar solution",
+    fullDescription:
+      "Premium home solution with advanced technology. Power your entire home with confidence.",
+    components: [
+      "3.5KVA Inverter",
+      "5kWh Lithium Battery",
+      "6 x 400W Solar Panels",
     ],
+    specifications: {
+      inverterCapacity: "3.5KVA",
+      batteryCapacity: "5kWh",
+      solarPanel: "6 x 400W",
+      backupTime: "8-12 hours",
+      warranty: "5 years",
+    },
+    features: [
+      "Full house lighting",
+      "TVs",
+      "Refrigerator",
+      "Fans",
+      "Washing Machine",
+      "Laptops",
+      "Phones",
+    ],
+    whatsappMessage:
+      "Hi! I'm interested in the *Smart Home Pack* (₦4,200,000). Can you provide more details and a quote?",
   },
   {
     id: "2032",

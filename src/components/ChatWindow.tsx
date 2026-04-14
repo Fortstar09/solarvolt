@@ -70,7 +70,7 @@ const ChatWindow = ({
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          message: userMessage, // ✅ match your backend
+          message: userMessage,
         }),
       });
 

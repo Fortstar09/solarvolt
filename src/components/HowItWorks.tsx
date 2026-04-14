@@ -6,11 +6,11 @@ gsap.registerPlugin(ScrollTrigger);
 
 const steps = [
   {
-    emoji: "🎯",
-    title: "Free Consultation",
+    emoji: "🤖",
+    title: "Smart AI Assistant",
     description:
-      "We understand your specific energy needs and budget. No obligation, just honest advice tailored to your situation.",
-    benefit: "Get personalized recommendations",
+      "Chat with our AI to understand your energy needs and get instant, tailored solar recommendations anytime.",
+    benefit: "Get instant personalized guidance",
   },
   {
     emoji: "📍",
@@ -42,7 +42,7 @@ const steps = [
   },
 ];
 
-const HowItWorks = () => {
+const HowItWorks = ({ openChat }: { openChat: () => void }) => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const cardsRef = useRef<HTMLDivElement[]>([]);
   const leftRef = useRef<HTMLDivElement>(null);
@@ -94,6 +94,13 @@ const HowItWorks = () => {
     };
   }, []);
 
+  const WhatsappMessage = () => {
+    window.open(
+      `https://api.whatsapp.com/send?phone=2347019155892&text=I+will+like+a+free+Consultation+with+your+brand`,
+      "_blank",
+    );
+  };
+
   return (
     <section
       ref={sectionRef}
@@ -101,19 +108,16 @@ const HowItWorks = () => {
     >
       <div className="max-w-7xl mx-auto">
         {/* Left Side - Why It Works */}
-        <div
-          ref={leftRef}
-          className="mb-16 md:mb-20 max-w-2xl"
-        >
+        <div ref={leftRef} className="mb-16 md:mb-20 max-w-2xl">
           <span className="text-black/30 text-sm font-light">(03)</span>
           <h2 className="text-4xl md:text-5xl font-light text-black/90 font-bricolage leading-tight my-6">
             Your path to energy{" "}
             <span className="text-teal-600 font-normal">independence</span>
           </h2>
           <p className="text-black/60 text-lg leading-relaxed mb-6">
-            We've made it simple. Five straightforward steps from consultation to
-            enjoying clean, reliable solar power. Most customers report saving
-            60-80% on electricity bills within the first month.
+            We've made it simple. Five straightforward steps from consultation
+            to enjoying clean, reliable solar power. Most customers report
+            saving 60-80% on electricity bills within the first month.
           </p>
           <div className="flex flex-col gap-4">
             <div className="flex gap-4 items-start">
@@ -158,7 +162,7 @@ const HowItWorks = () => {
             >
               {/* Card with tilt effect */}
               <div className="bg-white border border-black/8 rounded-2xl p-8 md:p-10 hover:border-teal-600/30 hover:shadow-lg transition duration-300 cursor-default">
-                <div className="flex gap-6 md:gap-8 items-start">
+                <div className="flex flex-col md:flex-row gap-6 md:gap-8 items-start">
                   {/* Big Emoji */}
                   <div className="text-6xl md:text-7xl flex-shrink-0 group-hover:scale-110 transition duration-300">
                     {step.emoji}
@@ -210,12 +214,24 @@ const HowItWorks = () => {
             Ready to Start Your Journey?
           </h3>
           <p className="text-black/60 text-lg mb-8 max-w-2xl mx-auto">
-            Join 500+ homes and businesses in Nigeria already enjoying the benefits
-            of solar energy. Your free consultation is just one click away.
+            Join 500+ homes and businesses in Nigeria already enjoying the
+            benefits of solar energy. Your free consultation is just one click
+            away.
           </p>
-          <button className="px-8 py-4 bg-teal-600 text-white rounded-full font-semibold hover:bg-teal-700 transition duration-300 shadow-lg hover:shadow-xl">
-            Book Your Free Consultation
-          </button>
+          <div className="space-y-3 md:space-x-3 ">
+            <button
+              onClick={WhatsappMessage}
+              className="px-6 py-3 md:px-8 md:py-4 cursor-pointer text-xs md:text-base bg-teal-600 text-white rounded-full font-normal hover:bg-teal-700 transition duration-300 shadow-lg hover:shadow-xl"
+            >
+              Book Your Free Consultation
+            </button>
+            <button
+              onClick={openChat}
+              className="px-6 py-3 md:px-8 md:py-4 text-xs md:text-base cursor-pointer bg-teal-600 text-white rounded-full font-normal hover:bg-teal-700 transition duration-300 shadow-lg hover:shadow-xl"
+            >
+              Ask Voltbot
+            </button>
+          </div>
         </div>
       </div>
     </section>
