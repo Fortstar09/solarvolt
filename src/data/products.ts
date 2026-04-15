@@ -6,7 +6,7 @@ export const PRODUCTS = [
     category: "solar-package",
     type: "low",
     price: 300000,
-    image: "/product/shop.jpg",
+    image: "/product/smart.c___",
     description: "Basic solar solution for students and minimal users",
     fullDescription:
       "Perfect for students and light users. Get reliable power for your essential devices with the Starter Pack. Ideal for powering lights, phones, and laptops.",

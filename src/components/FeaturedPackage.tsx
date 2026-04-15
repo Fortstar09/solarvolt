@@ -6,15 +6,17 @@ import { Link } from "react-router-dom";
 
 interface SolarPackageType {
   id: string;
-  category: "low" | "mid" | "premium" | "commercial";
   name: string;
-  description: string;
+  category: string;
+  type: "low" | "mid" | "premium" | "commercial";
   price: number;
   image: string;
-  otherImages: string[];
+  description: string;
+  fullDescription: string;
   components: string[];
-  powers: string[];
   backupTime: string;
+  features: string[];
+  whatsappMessage: string;
 }
 
 const FeaturedPackageComponent = () => {
@@ -22,11 +24,12 @@ const FeaturedPackageComponent = () => {
 
   // Get featured package (first premium package) and other packages
   const featuredPackage = SolarPackage.find(
-    (pkg) => pkg.category === "premium",
+    (pkg) => pkg.type === "premium",
   ) as SolarPackageType;
-  const otherPackages = SolarPackage.filter(
-    (pkg) => pkg.category !== "premium",
-  ).slice(0, 3) as SolarPackageType[];
+  const otherPackages = SolarPackage.filter((pkg) => pkg.type === "list").slice(
+    0,
+    3,
+  ) as SolarPackageType[];
 
   const formatPrice = (price: number): string => {
     return new Intl.NumberFormat("en-NG", {
@@ -68,9 +71,9 @@ const FeaturedPackageComponent = () => {
           <div className="mb-4 md:mb-10 bg-white rounded-3xl group border border-[#333]/10">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-1 md:gap-4 lg:gap-8">
               {/* Featured Image */}
-              <div className="relative rounded-3xl overflow-hidden h-80 md:h-full bg-gradient-to-br from-teal-400 to-gray-600">
+              <div className="relative rounded-3xl overflow-hidden h-80 md:h-full bg-white flex justify-center items-center">
                 <div
-                  className="w-full h-full bg-cover group-hover:scale-105 transition bg-center"
+                  className="w-[384px] h-[377px] bg-cover bg-center group-hover:scale-105 transition "
                   style={{
                     backgroundImage: `url('${
                       featuredPackage.image || "/hero/hero-img.jpg"
@@ -155,7 +158,7 @@ const FeaturedPackageComponent = () => {
                 {/* Image */}
                 <div className="relative h-48 overflow-hidden rounded-2xl">
                   <div
-                    className="w-full h-full bg-cover bg-center group-hover:scale-105 transition duration-300"
+                    className="w-full h-full bg-cover bg-center group-hover:scale-105 transition duration-300 "
                     style={{
                       backgroundImage: `url('${
                         pkg.image || "/hero/hero-img.jpg"
@@ -189,7 +192,7 @@ const FeaturedPackageComponent = () => {
                       {formatPrice(pkg.price)}
                     </p>
                     <Link
-                      to={`/products/${pkg.name}`}
+                      to={`/products/${pkg.id}`}
                       className="w-10 h-10 flex -ml-2 items-center justify-center rounded-full bg-[#333] text-white transition group-hover:cursor-pointer group-hover:rotate-90 group-hover:bg-teal-600"
                     >
                       <MoveUpRight size={16} />
