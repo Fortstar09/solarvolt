@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useState } from "react";
+import { Analytics } from "@vercel/analytics/react";
 import Navbar from "./components/Navbar";
 import ChatWindow from "./components/ChatWindow";
 import ChatButton from "./components/ChatButton";
@@ -35,6 +36,7 @@ export default function App() {
         <ChatButton onClick={() => setOpen(true)} />
         <ChatWindow open={open} onClose={() => setOpen(false)} />
       </div>
+      <Analytics />
     </Router>
   );
 }
